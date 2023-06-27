@@ -1,0 +1,12 @@
+.carousel-item{
+    height: 25rem;
+}
+
+.alert .alert-danger{
+    background-color: rgb(218, 172, 112) important!; 
+}
+
+
+.logo{
+    width: 6rem;
+}
