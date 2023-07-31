@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Producto;
+use App\Models\Categoria;
 class HomeController extends Controller
 {
     /**
@@ -25,9 +26,25 @@ class HomeController extends Controller
     {
         $productos = Producto::where('is_visible', true)
         ->orderBy('id', 'desc')
-        ->paginate(3);
-        
-        return view('home',['productos'=>$productos]);
+        ->paginate(6);
+        $categorias = Categoria::all();
+        return view('home',[
+            'productos'=>$productos,
+            'categorias'=>$categorias
+        ]);
      
+    }
+
+    public function detalle(Request $request)
+    {
+        $productos = Producto::where('is_visible', true)
+        ->orderBy('id', 'desc')->get();
+
+        $prod = Producto::find((int)$request->id);
+
+        return view('detalle', [
+            'prod'=>$prod,
+            'productos'=>$productos
+    ]);
     }
 }

@@ -1,5 +1,5 @@
 .carousel-item{
-    height: 25rem;
+    height: 20rem;
 }
 
 .alert .alert-danger{
@@ -9,4 +9,43 @@
 
 .logo{
     width: 6rem;
+}
+
+
+.links-categoria > *{
+    transition: all .5s;
+}
+
+.links-categoria > *:hover{
+    transform: scale(1.2);
+}
+
+input[type="search"]{
+    background-color:#4a5263;
+    color:#fff;
+    padding-left:20px;
+    border:none;
+    border-radius:50px 0px 0px 50px;
+}
+
+.xp-searchbar .btn{
+    background-color:#4a5263;
+    color:#fff;
+    font-weight:600;
+    font-size:16px;
+    border-radius:0 50px 50px 0;
+    padding:4px  15px;
+}
+
+.input-group-append{
+    margin-left:-1px;
+}
+
+
+
+
+@media(max-width : 1024px) {
+    .links-categoria{
+        display: none !important;
+    }
 }

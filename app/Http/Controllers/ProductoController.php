@@ -45,7 +45,7 @@ class ProductoController extends Controller
     public function store(Request $request)
     {
          //Agregamos la validación de imágenes.
-         $this->rules['imagen'] = 'required|mimes:jpg,bmp,png,gif';
+         $this->rules['imagen'] = 'required|dimensions:max_width=400,max_height=400, min_width=200,min_height=200|mimes:jpg,bmp,png,gif';
 
          $validator = Validator::make($request->all(), $this->rules, [
              'nombre.required' => 'El nombre del producto es obligatorio.',

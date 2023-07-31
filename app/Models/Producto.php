@@ -27,4 +27,9 @@ class Producto extends Model
     {
         return $this->hasOne( Categoria::class, 'id', 'categoria_id' );
     }
+
+    public function carrito()
+    {
+        return $this->hasMany( Carrito::class, 'carrito_id', 'id' );
+    }
 }
